@@ -1,0 +1,52 @@
+<snippet>
+	<content><![CDATA[
+
+add_action( 'init', '$1codex_custom_init' );
+
+function $1codex_custom_init() {
+  $labels = array(
+	'name'               => _x('$2Books', 'post type general name'),
+	'singular_name'      => _x('$3Book', 'post type singular name'),
+	'add_new'            => _x('Add New', '$4book'),
+	'add_new_item'       => __('Add New $3Book'),
+	'edit_item'          => __('Edit $3Book'),
+	'new_item'           => __('New $3Book'),
+	'all_items'          => __('All $2Books'),
+	'view_item'          => __('View $3Book'),
+	'search_items'       => __('Search $2Books'),
+	'not_found'          =>  __('No $2books found'),
+	'not_found_in_trash' => __('No $2books found in Trash'), 
+	'parent_item_colon'  => '',
+	'menu_name'          => '$2Books'
+
+  );
+  $args = array(
+	'labels'              => $labels,
+	'description'         => '$5description',
+	'public'              => true,
+	'publicly_queryable'  => true,
+	'exclude_from_search' => false,
+	'show_ui'             => true, 
+	'show_in_menu'        => true, 
+	'menu_position'       => 5,
+	'menu_icon'           => '',
+	'query_var'           => true,
+	'rewrite'             => true,
+	'capability_type'     => 'post',
+	//'capabilities'      => '',
+	'has_archive'         => true, 
+	'hierarchical'        => false,
+	'taxonomies'          =>  '$6category',
+	'supports'            => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments','trackbacks','custom-fields', 'revisions', 'page-attributes', 'post-formats')
+  ); 
+  register_post_type('$4$book',$args);
+}]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>cpt</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+ 
+     <!-- Optional: Description to show in the menu -->
+    <description>Register Custom Post Type Wordpress</description>
+</snippet>
+
+
