@@ -19,7 +19,7 @@ Register Custom Post Types - Write "cpt" , hit tab.
 
 Register Custom Taxonomy  -  Write "tax" , hit tab.
 
-Change all elements at once ( default is "Book") by hitting tab a few times.
+Change all elements at once ( default is "Book" for cpt and "Genre" for taxonomy..lifted from Codex) by hitting tab a few times.
 
 
-ps. A few defailt elements are not included ( such as 'update_count_callback').
+ps. A few default elements are not included ( such as 'update_count_callback').
