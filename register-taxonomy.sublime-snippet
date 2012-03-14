@@ -1,31 +1,30 @@
 <snippet>
 	<content><![CDATA[
 
-add_action( 'init', '$1create_book_taxonomies');
+add_action( 'init', '${1:create_book_taxonomies}');
 
-function $1create_book_taxonomies() 
+function ${1:create_book_taxonomies}() 
 {
-  // Add new taxonomy, make it hierarchical (like categories)
-
-	$labels = array(
-	'name'                  => _x( '$3Genres' ),
-	'singular_name'         => _x( '$4Genre' ),
-	'search_items'          => __( 'Search $3Genres' ),
-	'popular_items'         => _x( 'Popular $3Genres' ),
-	'all_items'             => __( 'All $3Genres' ),
-	'parent_item'           => __( 'Parent $4Genre' ),
-	'parent_item_colon'     => __( 'Parent $4Genre:' ),
-	'edit_item'             => __( 'Edit $4Genre' ), 
-	'update_item'           => __( 'Update $4Genre' ),
-	'add_new_item'          => __( 'Add New $4Genre' ),
-	'new_item_name'         => __( 'New $4Genre Name' ),
-	'add_or_remove_items'   => _x( 'Add or remove $3Genres'),
-	'choose_from_most_used' => _x( 'Choose from most used $3Genres'),
-	'menu_name'             => __( '$4Genre' ),
+ 
+	\$labels = array(
+	'name'                  => _x( '${3:Genres}' ),
+	'singular_name'         => _x( '${4:Genre}' ),
+	'search_items'          => __( 'Search ${3:Genres}' ),
+	'popular_items'         => _x( 'Popular ${3:Genres}' ),
+	'all_items'             => __( 'All ${3:Genres}' ),
+	'parent_item'           => __( 'Parent ${4:Genre}' ),
+	'parent_item_colon'     => __( 'Parent ${4:Genre}' ),
+	'edit_item'             => __( 'Edit ${4:Genre}' ), 
+	'update_item'           => __( 'Update {$4:Genre}' ),
+	'add_new_item'          => __( 'Add New {$4:Genre}' ),
+	'new_item_name'         => __( 'New ${4:Genre} Name' ),
+	'add_or_remove_items'   => _x( 'Add or remove ${3:Genres}'),
+	'choose_from_most_used' => _x( 'Choose from most used ${3:Genres}'),
+	'menu_name'             => __( '${4:Genre}' ),
 	); 	
 	
-	$args = array(
-				'labels'            => $labels,
+	\$args = array(
+				'labels'            => \$labels,
 				'public' 			=> true,
 				'show_in_nav_menus' => true,
 				'hierarchical'      => true,
@@ -36,7 +35,7 @@ function $1create_book_taxonomies()
 				'query_var' 		=> true,
 				'capabilities'		=> '',
   );
-    register_taxonomy( '$2genres', array('post'), $args );
+    register_taxonomy( '${2:genres}', array('post'), \$args );
 }
 }]]></content>
 	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
