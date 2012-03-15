@@ -42,7 +42,7 @@ function register_cpt_${1:test}() {
     );
 
     register_post_type( '${1:test}', \$args );
-}
+
 }]]></content>
 	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
 	<tabTrigger>cpt</tabTrigger>

@@ -20,7 +20,7 @@ Register Custom Post Types - Write "cpt" , hit tab.
 
 Register Custom Taxonomy  -  Write "tax" , hit tab.  
 
-PLugin Plugin template file  -  Write "wpp" , hit tab.  
+Plugin Plugin template file  -  Write "wpp" , hit tab.  
 
 
 Change all elements at once by hitting tab a few times.  
