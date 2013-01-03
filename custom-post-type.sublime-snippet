@@ -1,23 +1,23 @@
 <snippet>
 	<content><![CDATA[
 
-add_action( 'init', 'register_cpt_${1:test}' );
+add_action( 'init', 'register_cpt_${1:name}' );
 
-function register_cpt_${1:test}() {
+function register_cpt_${1:name}() {
 
     \$labels = array( 
-		'name'               => _x( '${2:Tests}', '${1:test}' ),
-		'singular_name'      => _x( '${3:Test}', '${1:test}' ),
-		'add_new'            => _x( 'Add New ${3:Test}', '${1:test}' ),
-		'add_new_item'       => _x( 'Add New ${3:Test}', '${1:test}' ),
-		'edit_item'          => _x( 'Edit ${3:Test}', '${1:test}' ),
-		'new_item'           => _x( 'New ${3:Test}', '${1:test}' ),
-		'view_item'          => _x( 'View ${3:Test}', '${1:test}' ),
-		'search_items'       => _x( 'Search ${2:Tests}', '${1:test}' ),
-		'not_found'          => _x( 'No ${2:Tests} found', '${1:test}' ),
-		'not_found_in_trash' => _x( 'No ${2:Tests} found in Trash', '${1:test}' ),
-		'parent_item_colon'  => _x( 'Parent ${3:Test}:', '${1:test}' ),
-		'menu_name'          => _x( '${2:Tests}', '${1:test}' ),
+		'name'               => __( '${2:Name of plural post type}', '${3:domain}' ),
+		'singular_name'      => __( '${4:Name of singular post type}', '${3:domain}' ),
+		'add_new'            => _x( 'Add New ${4:Name of singular post type}', '${4:Name}', '${3:domain}' ),
+		'add_new_item'       => __( 'Add New ${4:Name of singular post type}', '${3:domain}' ),
+		'edit_item'          => __( 'Edit ${4:Name of singular post type}', '${3:domain}' ),
+		'new_item'           => __( 'New ${4:Name of singular post type}', '${3:domain}' ),
+		'view_item'          => __( 'View ${4:Name of singular post type}', '${3:domain}' ),
+		'search_items'       => __( 'Search ${2:Name of plural post type}', '${3:domain}' ),
+		'not_found'          => __( 'No ${2:Name of plural post type} found', '${3:domain}' ),
+		'not_found_in_trash' => __( 'No ${2:Name of plural post type} found in Trash', '${3:domain}' ),
+		'parent_item_colon'  => __( 'Parent ${4:Name of singular post type}:', '${3:domain}' ),
+		'menu_name'          => __( '${2:Name of plural post type}', '${3:domain}' ),
     );
 
     \$args = array( 
@@ -38,12 +38,18 @@ function register_cpt_${1:test}() {
 		'can_export'          => true,
 		'rewrite'             => true,
 		'capability_type'     => 'post', 
-		'supports'            => array( 'title', 'editor', 'author', 'thumbnail', 'custom-fields', 'trackbacks', 'comments', 'revisions', 'page-attributes', 'post-formats' ),
+		'supports'            => array( 
+									'title', 'editor', 'author', 'thumbnail', 
+									'custom-fields', 'trackbacks', 'comments', 
+									'revisions', 'page-attributes', 'post-formats'
+								),
     );
 
     register_post_type( '${1:test}', \$args );
 
-}]]></content>
+}
+
+]]></content>
 	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
 	<tabTrigger>cpt</tabTrigger>
 	<!-- Optional: Set a scope to limit where the snippet will trigger -->
@@ -51,5 +57,3 @@ function register_cpt_${1:test}() {
      <!-- Optional: Description to show in the menu -->
     <description>Register Custom Post Type Wordpress</description>
 </snippet>
-
-

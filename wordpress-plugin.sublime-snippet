@@ -3,15 +3,20 @@
 <?php
 /*
 Plugin Name: ${1:Name}
-Plugin URI:  http://${2:#}
-Description: ${3:Description}
-Version:     ${4:1.0} 
-Author:      ${5:Author}
-Author URI:  http://${6:#}
-License:     ${7:GPL2}
+Description: ${2:Description}
+Plugin URI: http://${3:#}
+Author: ${4:Author}
+Author URI: http://${5:#}
+Version: ${6:1.0} 
+License: ${7:GPL2}
+Text Domain: ${8:Text Domain}
+Domain Path: ${9:Domain Path}
 
+*/
 
 /*  
+
+    Copyright (C) ${10:Year}  ${4:Author}  (email : ${11:Email})
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License, version 2, as 
@@ -27,9 +32,6 @@ License:     ${7:GPL2}
     Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-$8
-
-?>
 ]]></content>
 <!-- Optional: Description to show in the menu -->
     <description>Easy way to start WordPress plugin</description>
