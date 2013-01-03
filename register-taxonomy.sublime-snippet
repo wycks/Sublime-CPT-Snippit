@@ -1,43 +1,43 @@
 <snippet>
 	<content><![CDATA[
 
-add_action( 'init', '${1:create_book_taxonomies}');
+add_action( 'init', '${1:create_my_taxonomies}' );
 
-function ${1:create_book_taxonomies}() 
-{
- 
+function ${1:create_my_taxonomies}() {
+
 	\$labels = array(
-	'name'                  => _x( '${3:Genres}' ),
-	'singular_name'         => _x( '${4:Genre}' ),
-	'search_items'          => __( 'Search ${3:Genres}' ),
-	'popular_items'         => _x( 'Popular ${3:Genres}' ),
-	'all_items'             => __( 'All ${3:Genres}' ),
-	'parent_item'           => __( 'Parent ${4:Genre}' ),
-	'parent_item_colon'     => __( 'Parent ${4:Genre}' ),
-	'edit_item'             => __( 'Edit ${4:Genre}' ), 
-	'update_item'           => __( 'Update {$4:Genre}' ),
-	'add_new_item'          => __( 'Add New {$4:Genre}' ),
-	'new_item_name'         => __( 'New ${4:Genre} Name' ),
-	'add_or_remove_items'   => _x( 'Add or remove ${3:Genres}'),
-	'choose_from_most_used' => _x( 'Choose from most used ${3:Genres}'),
-	'menu_name'             => __( '${4:Genre}' ),
+	'name'					=> _x( '${2:Name of plural Taxonomy}', 'Taxonomy general name', '${3:Domain}' ),
+	'singular_name'			=> _x( '${4:Name of singular Taxonomy}', 'Taxonomy singular name', '${3:Domain}' ),
+	'search_items'			=> __( 'Search ${2:Name of plural Taxonomy}', '${3:Domain}' ),
+	'popular_items'			=> __( 'Popular ${2:Name of plural Taxonomy}', '${3:Domain}' ),
+	'all_items'				=> __( 'All ${2:Name of plural Taxonomy}', '${3:Domain}' ),
+	'parent_item'			=> __( 'Parent ${4:Name of singular Taxonomy}', '${3:Domain}' ),
+	'parent_item_colon'		=> __( 'Parent ${4:Name of singular Taxonomy}', '${3:Domain}' ),
+	'edit_item'				=> __( 'Edit ${4:Name of singular Taxonomy}', '${3:Domain}' ),
+	'update_item'			=> __( 'Update ${4:Name of singular Taxonomy}', '${3:Domain}' ),
+	'add_new_item'			=> __( 'Add New ${4:Name of singular Taxonomy}', '${3:Domain}' ),
+	'new_item_name'			=> __( 'New ${4:Name of singular Taxonomy} Name', '${3:Domain}' ),
+	'add_or_remove_items'	=> __( 'Add or remove ${2:Name of plural Taxonomy}', '${3:Domain}' ),
+	'choose_from_most_used'	=> __( 'Choose from most used ${2:Name of plural Taxonomy}', '${3:Domain}' ),
+	'menu_name'				=> __( '${4:Name of singular Taxonomy}', '${3:Domain}' ),
 	); 	
 	
 	\$args = array(
-				'labels'            => \$labels,
-				'public' 			=> true,
-				'show_in_nav_menus' => true,
-				'hierarchical'      => true,
-				'show_tagcloud'     => true,
-				'show_ui'           => true,
-				'query_var'         => true,
-				'rewrite'			=> true,
-				'query_var' 		=> true,
-				'capabilities'		=> '',
-  );
-    register_taxonomy( '${2:genres}', array('post'), \$args );
+		'labels'			=> \$labels,
+		'public' 			=> true,
+		'show_in_nav_menus'	=> true,
+		'hierarchical'		=> true,
+		'show_tagcloud'		=> true,
+		'show_ui'			=> true,
+		'query_var'			=> true,
+		'rewrite'			=> true,
+		'query_var'			=> true,
+		'capabilities'		=> '',
+	);
+
+	register_taxonomy( '${5:taxonomy-slug}', array( 'post' ), \$args );
 }
-}]]></content>
+]]></content>
 	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
 	<tabTrigger>tax</tabTrigger>
 	<!-- Optional: Set a scope to limit where the snippet will trigger -->
