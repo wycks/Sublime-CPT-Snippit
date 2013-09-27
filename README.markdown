@@ -1,3 +1,8 @@
+#### This plugin has moved: https://github.com/wycks/SublimeText-WordPress-Autocomplete
+
+Please check this ^^ which includes more snippets and autocomplete, eventually this repo will be deleted.
+
+-------------------------------
 
 Three snippits for Wordpress
 
